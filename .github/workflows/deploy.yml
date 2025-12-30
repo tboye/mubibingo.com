@@ -39,8 +39,7 @@ jobs:
         run: |
           sudo apt-get install -y librsvg2-bin fonts-open-sans
           mkdir -p ~/.local/share/fonts
-          wget -q "https://fonts.google.com/download?family=Outfit" -O outfit.zip
-          unzip -q outfit.zip -d ~/.local/share/fonts/
+          wget -q "https://github.com/google/fonts/raw/refs/heads/main/ofl/outfit/Outfit%5Bwght%5D.ttf" -O ~/.local/share/fonts/Outfit[wght].ttf
           fc-cache -f
           rsvg-convert og-image.svg -w 1200 -h 630 -o og-image.png
 
