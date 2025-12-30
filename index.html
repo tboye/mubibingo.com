@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUBI Bingo – Find where your film is streaming</title>
+  <meta name="description" content="MUBI film not available in your country? Use MUBI Bingo, a free Chrome extension to find where it is.">
+  <meta name="keywords" content="MUBI, streaming, film availability, Chrome extension, international streaming, arthouse films, cinema, world cinema">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="MUBI Bingo – Find where your film is streaming">
+  <meta property="og:description" content="MUBI film not available in your country? Free Chrome extension to find where it is.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mubibingo.com">
+  <meta property="og:image" content="https://mubibingo.com/og-image.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MUBI Bingo – Find where your film is streaming">
+  <meta name="twitter:description" content="MUBI film not available in your country? Free Chrome extension to find where it is.">
+  <meta name="twitter:image" content="https://mubibingo.com/og-image.png">
+
+  <link rel="canonical" href="https://mubibingo.com">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+    <main class="main">
+      <div class="hero">
+        <h1 class="hero-title">MUBI Bingo</h1>
+        <p class="hero-subtitle">Found a film on MUBI that's not available? See which countries have it.</p>
+        <a href="#" class="cta-button"><svg class="chrome-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M12 0C8.21 0 4.831 1.757 2.632 4.501l3.953 6.848A5.454 5.454 0 0 1 12 6.545h10.691A12 12 0 0 0 12 0zM1.931 5.47A11.943 11.943 0 0 0 0 12c0 6.012 4.42 10.991 10.189 11.864l3.953-6.847a5.45 5.45 0 0 1-6.865-2.29zm13.342 2.166a5.446 5.446 0 0 1 1.45 7.09l.002.001h-.002l-5.344 9.257c.206.01.413.016.621.016 6.627 0 12-5.373 12-12 0-1.54-.29-3.011-.818-4.364zM12 16.364a4.364 4.364 0 1 1 0-8.728 4.364 4.364 0 0 1 0 8.728Z"/></svg>Install Chrome Extension</a>
+      </div>
+
+      <div class="demo-container">
+        <div class="popup">
+          <div id="film-state" class="state">
+            <div class="film-info">
+              <h3 id="film-title" class="film-title">Film Title</h3>
+              <span id="loading-indicator" class="loading-indicator">↻</span>
+            </div>
+
+            <div id="bingo-grid" class="bingo-grid"></div>
+          </div>
+          <div id="tooltip" class="tooltip"></div>
+        </div>
+        <p class="demo-label">This is a demo</p>
+      </div>
+
+      <section class="legend">
+        <div class="legend-item">
+          <span class="legend-circle live"></span>
+          <div>
+            <h3 class="legend-title">Available now</h3>
+            <p class="legend-desc">This country has it</p>
+          </div>
+        </div>
+        <div class="legend-item">
+          <span class="legend-circle upcoming"></span>
+          <div>
+            <h3 class="legend-title">Coming soon</h3>
+            <p class="legend-desc">This country is getting it</p>
+          </div>
+        </div>
+        <div class="legend-item">
+          <span class="legend-circle unavailable"></span>
+          <div>
+            <h3 class="legend-title">Not available</h3>
+            <p class="legend-desc">This country doesn't have it</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="how-it-works">
+        <h2 class="section-title">How it works</h2>
+        <ol class="steps">
+          <li>Install the extension and pin it to your toolbar</li>
+          <li>Browse to any film on <a href="https://mubi.com" target="_blank" rel="noopener">mubi.com</a></li>
+          <li>Click the extension <svg class="step-icon" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><circle cx="21" cy="21" r="18" fill="#22c55e"/><circle cx="64" cy="21" r="18" fill="#22c55e"/><circle cx="107" cy="21" r="18" fill="#555"/><circle cx="21" cy="64" r="18" fill="#f59e0b"/><circle cx="64" cy="64" r="18" fill="#22c55e"/><circle cx="107" cy="64" r="18" fill="#22c55e"/><circle cx="21" cy="107" r="18" fill="#555"/><circle cx="64" cy="107" r="18" fill="#555"/><circle cx="107" cy="107" r="18" fill="#f59e0b"/></svg> to see which countries have it</li>
+        </ol>
+      </section>
+
+      <section class="faq-section">
+        <h2 class="section-title">FAQ</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Why would I need this?</summary>
+            <p>MUBI's catalog is different in every country. If a film isn't available where you are, this helps you find where it is.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What does it show?</summary>
+            <p>A grid of 50 countries, color-coded by availability: green (streaming now), yellow (coming soon), gray (not available).</p>
+          </details>
+          <details class="faq-item">
+            <summary>Which countries are checked?</summary>
+            <p>Albania, Argentina, Australia, Austria, Belgium, Brazil, Bulgaria, Canada, Chile, Colombia, Croatia, Cyprus, Czechia, Denmark, Estonia, Finland, France, Germany, Greece, Hong Kong, Hungary, Indonesia, Ireland, Israel, Italy, Japan, Malaysia, Mexico, Netherlands, New Zealand, Nigeria, Norway, Peru, Philippines, Poland, Portugal, Romania, Serbia, Singapore, Slovakia, Slovenia, South Africa, Spain, Sweden, Switzerland, Thailand, Turkey, Ukraine, United Kingdom, United States.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do I need a MUBI account?</summary>
+            <p>Yes. You need to be logged in to MUBI for the extension to work. Any account type works.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Does my location affect the results?</summary>
+            <p>No. Results are the same regardless of where you are.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Is this an official extension?</summary>
+            <p>No. MUBI Bingo is an independent project, not affiliated with or endorsed by MUBI.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What data do you collect?</summary>
+            <p>None. Your data stays on your device.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Is there a keyboard shortcut?</summary>
+            <p>Yes. <code>Ctrl+Shift+O</code> (<code>Cmd+Shift+O</code> on Mac). You can customize it in <code>chrome://extensions/shortcuts</code>.</p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <section class="support-section">
+      <p class="support-text">Like the extension?</p>
+      <div class="kofi-container">
+        <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
+        <script type='text/javascript'>kofiwidget2.init('Support on Ko-fi', '#aecbf8', 'U7U41R3CMT');kofiwidget2.draw();</script>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p><a href="mailto:hello@mubibingo.com">hello@mubibingo.com</a> · Not affiliated with MUBI.</p>
+    </footer>
+  </div>
+
+  <script src="demo.js"></script>
+</body>
+</html>
