@@ -1,0 +1,27 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0a0a0a"/>
+
+  <!-- Bingo Grid (vertically centered, left side) -->
+  <g transform="translate(205, 220)">
+    <!-- Row 1 -->
+    <circle cx="0" cy="0" r="42" fill="#22c55e"/>
+    <circle cx="95" cy="0" r="42" fill="#22c55e"/>
+    <circle cx="190" cy="0" r="42" fill="#555"/>
+    <!-- Row 2 -->
+    <circle cx="0" cy="95" r="42" fill="#f59e0b"/>
+    <circle cx="95" cy="95" r="42" fill="#22c55e"/>
+    <circle cx="190" cy="95" r="42" fill="#22c55e"/>
+    <!-- Row 3 -->
+    <circle cx="0" cy="190" r="42" fill="#555"/>
+    <circle cx="95" cy="190" r="42" fill="#555"/>
+    <circle cx="190" cy="190" r="42" fill="#f59e0b"/>
+  </g>
+
+  <!-- Title -->
+  <text x="520" y="315" font-family="Outfit, sans-serif" font-size="72" font-weight="700" fill="#aecbf8" letter-spacing="3">MUBI Bingo</text>
+
+  <!-- Tagline -->
+  <text x="520" y="375" font-family="Outfit, sans-serif" font-size="28" fill="#888">Find where your film is streaming</text>
+
+</svg>

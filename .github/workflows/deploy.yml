@@ -1,0 +1,57 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Minify JS
+        run: |
+          npm install -g terser
+          terser demo.js -o demo.js -c -m
+
+      - name: Generate OG image
+        run: |
+          sudo apt-get install -y librsvg2-bin fonts-open-sans
+          mkdir -p ~/.local/share/fonts
+          wget -q "https://fonts.google.com/download?family=Outfit" -O outfit.zip
+          unzip -q outfit.zip -d ~/.local/share/fonts/
+          fc-cache -f
+          rsvg-convert og-image.svg -w 1200 -h 630 -o og-image.png
+
+      - name: Set up Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy to Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
