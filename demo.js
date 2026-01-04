@@ -188,8 +188,8 @@
   }
 
   // DOM elements
-  const filmTitle = document.getElementById('film-title');
-  const bingoGrid = document.getElementById('bingo-grid');
+  const itemTitle = document.getElementById('item-title');
+  const bingoGrid = document.getElementById('bingo');
   const loadingIndicator = document.getElementById('loading-indicator');
   const tooltip = document.getElementById('tooltip');
   const cellMap = new Map();
@@ -291,7 +291,7 @@
     resetGrid();
 
     // Update title
-    filmTitle.textContent = film.title;
+    itemTitle.textContent = film.title;
     loadingIndicator.classList.remove('hidden');
 
     // Small delay before starting reveal

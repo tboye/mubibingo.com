@@ -146,14 +146,14 @@ code {
   display: none !important;
 }
 
-.film-info {
+.item-info {
   width: 100%;
   text-align: center;
   margin-bottom: 10px;
   position: relative;
 }
 
-.film-title {
+.item-title {
   font-size: 16px;
   font-weight: 500;
   color: var(--text-primary);
