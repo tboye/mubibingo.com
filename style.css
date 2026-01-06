@@ -77,8 +77,18 @@ code {
   margin-right: auto;
 }
 
+.cta-container {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+}
+
 .cta-button {
-  display: inline-block;
+  display: flex;
+  align-items: center;
   background: var(--text-title);
   color: var(--bg-primary);
   padding: 14px 32px;
@@ -93,7 +103,7 @@ code {
   opacity: 0.9;
 }
 
-.chrome-icon {
+.browser-icon {
   width: 20px;
   height: 20px;
   vertical-align: middle;
