@@ -1,6 +1,6 @@
 # mubibingo.com
 
-Landing page for the MUBI Bingo Chrome extension.
+Landing page for the MUBI Bingo Chrome/Firefox extension.
 
 ## License
 
