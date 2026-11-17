@@ -96,6 +96,7 @@ code {
 }
 
 .hero-subtitle {
+  text-wrap: pretty;
   font-size: 20px;
   color: var(--text-primary);
   max-width: 30ch;
@@ -483,14 +484,45 @@ code {
 
 /* Responsive */
 @media (max-width: 820px) {
+  .main,
+  .footer {
+    max-width: 640px;
+  }
+
   .hero--split {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 48px;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-container {
+    justify-content: center;
+  }
+
+  .demo-container {
+    align-items: center;
   }
 
   .row {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+
+  .section-title {
+    text-align: center;
+  }
+
+  .footer,
+  .row-body {
+    text-align: center;
   }
 }
 
@@ -505,6 +537,17 @@ code {
 
   .hero-subtitle {
     font-size: 18px;
+  }
+
+  .cta-container {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  .cta-button {
+    justify-content: center;
   }
 
 }
