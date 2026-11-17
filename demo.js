@@ -187,6 +187,8 @@
     return array;
   }
 
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   // DOM elements
   const itemTitle = document.getElementById('item-title');
   const bingoGrid = document.getElementById('bingo');
@@ -267,6 +269,11 @@
   function revealCellsStaggered(availability) {
     return new Promise(resolve => {
       const shuffled = shuffleArray([...COUNTRIES]);
+      if (reduceMotion) {
+        shuffled.forEach(country => updateCell(country, availability[country.code]));
+        resolve();
+        return;
+      }
       const delay = 30;
       let index = 0;
 
@@ -313,6 +320,11 @@
     initEmptyGrid();
     shuffleArray(FILMS);
     let filmIndex = 0;
+
+    if (reduceMotion) {
+      await showFilm(FILMS[0]);
+      return;
+    }
 
     while (true) {
       await showFilm(FILMS[filmIndex]);
